@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 const stats = [
   { value: '94%', label: 'чувствительность' },
   { value: '<100 мс', label: 'задержка' },
-  { value: '35 000 ₽', label: 'стартовая цена' },
+  { value: '550 000 ₽', label: 'стартовая цена' },
   { value: '100%', label: 'локальный' },
 ];
 
@@ -76,14 +76,19 @@ export function Contact() {
           >
             Запросить демо
           </button>
-          <a
-            href="https://scopiq.gyxer.com"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => {
+              const el = document.querySelector('#hero');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+              setTimeout(() => {
+                const videoBtn = document.querySelector('[data-video-trigger]') as HTMLButtonElement;
+                if (videoBtn) videoBtn.click();
+              }, 800);
+            }}
             className="px-10 py-5 border border-[rgba(0,229,255,0.4)] text-[#00E5FF] text-base font-medium uppercase tracking-[0.08em] rounded-md hover:bg-[rgba(0,229,255,0.1)] hover:border-[#00E5FF] transition-all duration-300"
           >
             Посмотреть демо
-          </a>
+          </button>
         </div>
 
         {/* Contact link */}
@@ -94,14 +99,6 @@ export function Contact() {
           )}
           style={{ transitionDelay: '500ms' }}
         >
-          <a
-            href="https://scopiq.gyxer.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-mono text-base text-[#00E5FF] border-b border-[#00E5FF] hover:text-[#33EBFF] hover:border-[#33EBFF] transition-colors"
-          >
-            scopiq.gyxer.com
-          </a>
         </div>
 
         {/* Footer tagline */}

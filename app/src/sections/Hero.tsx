@@ -127,6 +127,7 @@ export function Hero() {
             Запросить демо
           </button>
           <button
+            data-video-trigger
             onClick={() => setShowVideo(true)}
             className="px-8 py-4 border border-[rgba(0,229,255,0.4)] text-[#00E5FF] text-sm font-medium uppercase tracking-[0.08em] rounded-md hover:bg-[rgba(0,229,255,0.1)] hover:border-[#00E5FF] transition-all duration-300 flex items-center gap-2"
           >
@@ -162,9 +163,12 @@ export function Hero() {
               src="/video/demo.mp4"
               controls
               autoPlay
+              preload="metadata"
               className="w-full h-full object-contain"
               playsInline
-            />
+            >
+              <source src="/video/demo.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
       )}

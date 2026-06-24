@@ -3,7 +3,7 @@ import { SectionLabel } from '@/components/SectionLabel';
 import { cn } from '@/lib/utils';
 
 const tableData = [
-  { criterion: 'Стоимость', artincol: '3.75 млн ₽', poliscop: '35 тыс. ₽', highlight: true },
+  { criterion: 'Стоимость', artincol: '3.75 млн ₽', poliscop: '550 тыс. ₽', highlight: true },
   { criterion: 'Подключение', artincol: 'Совместимый видеопроцессор, HD-SDI', poliscop: 'Любой эндоскоп через HDMI', highlight: false },
   { criterion: 'Парк эндоскопов', artincol: 'Требует совместное железо', poliscop: 'Работает с существующим парком', highlight: false },
   { criterion: 'Готовность', artincol: 'Нет — Legendo отдельно', poliscop: 'Да — всё включено', highlight: false },
@@ -11,7 +11,7 @@ const tableData = [
 ];
 
 const advantages = [
-  { title: 'В 107 раз дешевле', desc: 'Доступно частным клиникам' },
+  { title: 'В 7 раз дешевле', desc: 'Доступно частным клиникам' },
   { title: 'Plug-and-play', desc: 'Никакой модификации оборудования' },
   { title: 'Всё включено', desc: 'ПО, поддержка, обновления' },
   { title: 'Локальный инференс', desc: 'Без облака, без интернета' },
@@ -32,7 +32,7 @@ export function Competitors() {
           )}
           style={{ transitionDelay: '100ms' }}
         >
-          В 100 раз дешевле при сопоставимом качестве
+          В 5 раз дешевле при сопоставимом качестве
         </h2>
 
         {/* Comparison table */}

@@ -9,14 +9,6 @@ export function Footer() {
           <p className="text-xs text-[rgba(230,241,255,0.35)] mt-1">&copy; 2026</p>
         </div>
 
-        <a
-          href="https://scopiq.gyxer.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-mono text-[13px] text-[#00E5FF] hover:underline"
-        >
-          scopiq.gyxer.com
-        </a>
 
         <div className="text-right">
           <p className="text-xs text-[rgba(230,241,255,0.35)]">

@@ -3,15 +3,14 @@ import { SectionLabel } from '@/components/SectionLabel';
 import { cn } from '@/lib/utils';
 
 const pricingCards = [
-  { price: '35 000 ₽', label: 'Базовый комплект «под ключ»', desc: 'Инференс-блок + ПО + кабели + настройка', badge: null },
-  { price: '15 000 ₽/мес', label: 'Подписка', desc: 'ПО + техническая поддержка + обновления моделей', badge: 'POPULAR' },
+  { price: '550 000 ₽', label: 'Базовый комплект «под ключ»', desc: 'Инференс-блок + ПО + кабели + настройка', badge: null },
+  { price: '35 000 ₽', label: 'Подписка', desc: 'ПО + техническая поддержка + обновления моделей', badge: 'POPULAR' },
   { price: '30 000 ₽', label: 'Разово за установку', desc: 'Выезд специалиста, интеграция, обучение персонала', badge: null },
 ];
 
 const metrics = [
-  { value: '50.9%', label: 'Маржинальность по чистой прибыли' },
-  { value: '~190 000 ₽', label: 'Мин. прибыль с единицы (консервативная оценка)' },
-  { value: '2.1×', label: 'ROI на единицу, окупаемость с первой продажи' },
+  { value: '~221 667 ₽', label: 'Прибыль с единицы (ОСН)' },
+  { value: '2.76×', label: 'ROI на единицу, окупаемость с первой продажи' },
 ];
 
 export function Economics() {
@@ -29,7 +28,7 @@ export function Economics() {
           )}
           style={{ transitionDelay: '100ms' }}
         >
-          35 000 ₽ «под ключ» с маржинальностью 50.9%
+          550 000 ₽ «под ключ»
         </h2>
 
         {/* Pricing cards */}
@@ -79,12 +78,12 @@ export function Economics() {
             </div>
             <span className="text-2xl text-[rgba(230,241,255,0.35)]">−</span>
             <div className="text-center">
-              <div className="font-mono text-2xl md:text-3xl text-[rgba(230,241,255,0.6)]">116 667 ₽</div>
+              <div className="font-mono text-2xl md:text-3xl text-[rgba(230,241,255,0.6)]">128 333 ₽</div>
               <div className="text-xs text-[rgba(230,241,255,0.35)] mt-1 uppercase">Налоги (ОСН)</div>
             </div>
             <span className="text-2xl text-[#00E5FF]">=</span>
             <div className="text-center">
-              <div className="font-mono text-3xl md:text-4xl text-[#00E5FF] text-glow-cyan">233 333 ₽</div>
+              <div className="font-mono text-3xl md:text-4xl text-[#00E5FF] text-glow-cyan">221 667 ₽</div>
               <div className="text-xs text-[#00E5FF]/60 mt-1 uppercase">Прибыль</div>
             </div>
           </div>
