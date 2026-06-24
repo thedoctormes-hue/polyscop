@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
+import { Play, X } from 'lucide-react';
 
 const specBadges = [
   { label: 'YOLOv8m', value: 'mAP50: 0.938' },
@@ -9,6 +10,7 @@ const specBadges = [
 
 export function Hero() {
   const [loaded, setLoaded] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoaded(true), 100);
@@ -124,14 +126,13 @@ export function Hero() {
           >
             Запросить демо
           </button>
-          <a
-            href="https://scopiq.gyxer.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-4 border border-[rgba(0,229,255,0.4)] text-[#00E5FF] text-sm font-medium uppercase tracking-[0.08em] rounded-md hover:bg-[rgba(0,229,255,0.1)] hover:border-[#00E5FF] transition-all duration-300"
+          <button
+            onClick={() => setShowVideo(true)}
+            className="px-8 py-4 border border-[rgba(0,229,255,0.4)] text-[#00E5FF] text-sm font-medium uppercase tracking-[0.08em] rounded-md hover:bg-[rgba(0,229,255,0.1)] hover:border-[#00E5FF] transition-all duration-300 flex items-center gap-2"
           >
-            Смотреть видео
-          </a>
+            <Play className="w-4 h-4" />
+            Смотреть демо
+          </button>
         </div>
       </div>
 
@@ -140,6 +141,33 @@ export function Hero() {
         <div className="w-[1px] h-10 bg-[#00E5FF]/30" />
         <div className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-bounce-dot" />
       </div>
+
+      {/* Video Modal */}
+      {showVideo && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+          onClick={() => setShowVideo(false)}
+        >
+          <div
+            className="relative w-[90vw] max-w-[1200px] aspect-video rounded-lg overflow-hidden shadow-2xl shadow-[#00E5FF]/20"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setShowVideo(false)}
+              className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <video
+              src="/video/demo.mp4"
+              controls
+              autoPlay
+              className="w-full h-full object-contain"
+              playsInline
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
