@@ -42,13 +42,13 @@ export function Roadmap() {
   const { ref, isVisible } = useScrollReveal(0.15);
 
   return (
-    <section id="roadmap" className="bg-[#060E1A] section-padding">
+    <section id="roadmap" className="bg-[var(--bg-secondary)] section-padding">
       <div ref={ref} className="content-container">
         <SectionLabel text="Дальнейшее развитие" />
 
         <h2
           className={cn(
-            'font-oswald text-3xl md:text-[40px] font-normal uppercase tracking-[-0.02em] text-[#E6F1FF] leading-tight transition-all duration-600',
+            'font-oswald text-3xl md:text-[40px] font-normal uppercase tracking-[-0.02em] text-foreground leading-tight transition-all duration-600',
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           )}
           style={{ transitionDelay: '100ms' }}
@@ -60,7 +60,7 @@ export function Roadmap() {
         <div className="hidden md:block mt-16">
           {/* Timeline line */}
           <div className="relative">
-            <div className="absolute top-[7px] left-[12.5%] right-[12.5%] h-[2px] bg-[rgba(0,229,255,0.1)]" />
+            <div className="absolute top-[7px] left-[12.5%] right-[12.5%] h-[2px] bg-[var(--accent-cyan-dim)]" />
 
             {/* Dots row */}
             <div className="flex justify-center gap-0">
@@ -71,7 +71,7 @@ export function Roadmap() {
                       'w-4 h-4 rounded-full z-10 transition-all duration-500',
                       stage.active
                         ? 'bg-[#00E5FF] shadow-glow-strong'
-                        : 'bg-[rgba(0,229,255,0.2)]'
+                        : 'bg-[var(--glow-strong)]'
                     )}
                     style={{
                       transitionDelay: `${300 + i * 100}ms`,
@@ -90,7 +90,7 @@ export function Roadmap() {
                 <div
                   key={stage.title}
                   className={cn(
-                    'bg-[#08101F] border border-[rgba(0,229,255,0.1)] p-8 rounded-lg card-glow transition-all duration-500',
+                    'bg-card border border-[var(--accent-cyan-dim)] p-8 rounded-lg card-glow transition-all duration-500',
                     stage.active && 'border-t-2 border-t-[#00E5FF]',
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   )}
@@ -99,11 +99,11 @@ export function Roadmap() {
                   <div className="text-[#00E5FF]">
                     <Icon size={28} />
                   </div>
-                  <div className="mt-4 text-[11px] text-[rgba(230,241,255,0.35)] uppercase tracking-wider">
+                  <div className="mt-4 text-[11px] text-[var(--text-muted)] uppercase tracking-wider">
                     {stage.label}
                   </div>
-                  <div className="mt-2 text-2xl font-medium text-[#E6F1FF]">{stage.title}</div>
-                  <div className="mt-2 text-sm text-[rgba(230,241,255,0.6)]">{stage.desc}</div>
+                  <div className="mt-2 text-2xl font-medium text-foreground">{stage.title}</div>
+                  <div className="mt-2 text-sm text-[var(--text-secondary)]">{stage.desc}</div>
                   {stage.focus && (
                     <div className="mt-4 text-[13px] text-[#00E5FF]/60">{stage.focus}</div>
                   )}
@@ -126,18 +126,18 @@ export function Roadmap() {
                       'w-4 h-4 rounded-full flex-shrink-0 transition-all duration-500',
                       stage.active
                         ? 'bg-[#00E5FF] shadow-glow-strong'
-                        : 'bg-[rgba(0,229,255,0.2)]'
+                        : 'bg-[var(--glow-strong)]'
                     )}
                   />
                   {i < stages.length - 1 && (
-                    <div className="w-[2px] flex-1 bg-[rgba(0,229,255,0.1)] mt-2" />
+                    <div className="w-[2px] flex-1 bg-[var(--accent-cyan-dim)] mt-2" />
                   )}
                 </div>
 
                 {/* Card */}
                 <div
                   className={cn(
-                    'flex-1 bg-[#08101F] border border-[rgba(0,229,255,0.1)] p-6 rounded-lg card-glow -mt-2 transition-all duration-500',
+                    'flex-1 bg-card border border-[var(--accent-cyan-dim)] p-6 rounded-lg card-glow -mt-2 transition-all duration-500',
                     stage.active && 'border-l-2 border-l-[#00E5FF]',
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                   )}
@@ -146,11 +146,11 @@ export function Roadmap() {
                   <div className="text-[#00E5FF]">
                     <Icon size={24} />
                   </div>
-                  <div className="mt-3 text-[11px] text-[rgba(230,241,255,0.35)] uppercase tracking-wider">
+                  <div className="mt-3 text-[11px] text-[var(--text-muted)] uppercase tracking-wider">
                     {stage.label}
                   </div>
-                  <div className="mt-1 text-xl font-medium text-[#E6F1FF]">{stage.title}</div>
-                  <div className="mt-1 text-sm text-[rgba(230,241,255,0.6)]">{stage.desc}</div>
+                  <div className="mt-1 text-xl font-medium text-foreground">{stage.title}</div>
+                  <div className="mt-1 text-sm text-[var(--text-secondary)]">{stage.desc}</div>
                   {stage.focus && (
                     <div className="mt-3 text-[13px] text-[#00E5FF]/60">{stage.focus}</div>
                   )}

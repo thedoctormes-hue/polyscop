@@ -16,13 +16,13 @@ module.exports = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         poliscop: {
-          bg: '#040A14',
-          card: '#08101F',
-          elevated: '#0D1829',
-          secondary: '#060E1A',
+          bg: '#F4F8FC',
+          card: '#FFFFFF',
+          elevated: '#EAF1F8',
+          secondary: '#E9EFF6',
           cyan: '#00E5FF',
           magenta: '#FF00E5',
-          text: '#E6F1FF',
+          text: '#0A1626',
         },
         primary: {
           DEFAULT: "hsl(var(--primary))",
@@ -62,10 +62,10 @@ module.exports = {
       },
       boxShadow: {
         xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
-        glow: '0 0 40px rgba(0, 229, 255, 0.05)',
-        'glow-hover': '0 0 60px rgba(0, 229, 255, 0.1)',
-        'glow-strong': '0 0 80px rgba(0, 229, 255, 0.2)',
-        'glow-button': '0 0 30px rgba(0, 229, 255, 0.3)',
+        glow: '0 0 40px var(--glow-color)',
+        'glow-hover': '0 0 60px var(--glow-color)',
+        'glow-strong': '0 0 80px var(--glow-strong)',
+        'glow-button': '0 0 30px var(--glow-strong)',
       },
       keyframes: {
         "accordion-down": {

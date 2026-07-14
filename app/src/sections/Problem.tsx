@@ -29,7 +29,7 @@ function StatCard({
   return (
     <div
       className={cn(
-        'bg-[#08101F] border border-[rgba(0,229,255,0.1)] p-8 md:p-10 rounded-lg card-glow transition-all duration-500',
+        'bg-card border border-[var(--accent-cyan-dim)] p-8 md:p-10 rounded-lg card-glow transition-all duration-500',
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       )}
       style={{
@@ -42,8 +42,8 @@ function StatCard({
         {count}
         {suffix}
       </div>
-      <div className="mt-3 text-base text-[rgba(230,241,255,0.6)]">{label}</div>
-      <div className="mt-2 text-sm text-[rgba(230,241,255,0.35)]">{desc}</div>
+      <div className="mt-3 text-base text-[var(--text-secondary)]">{label}</div>
+      <div className="mt-2 text-sm text-[var(--text-muted)]">{desc}</div>
     </div>
   );
 }
@@ -52,13 +52,13 @@ export function Problem() {
   const { ref, isVisible } = useScrollReveal(0.15);
 
   return (
-    <section id="problem" className="bg-[#040A14] section-padding">
+    <section id="problem" className="bg-background section-padding">
       <div ref={ref} className="content-container">
         <SectionLabel text="Проблема" color="magenta" />
 
         <h2
           className={cn(
-            'font-oswald text-3xl md:text-[40px] font-normal uppercase tracking-[-0.02em] text-[#E6F1FF] max-w-[700px] leading-tight transition-all duration-600',
+            'font-oswald text-3xl md:text-[40px] font-normal uppercase tracking-[-0.02em] text-foreground max-w-[700px] leading-tight transition-all duration-600',
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           )}
         >
@@ -67,7 +67,7 @@ export function Problem() {
 
         <p
           className={cn(
-            'mt-3 text-base text-[rgba(230,241,255,0.6)] transition-all duration-600',
+            'mt-3 text-base text-[var(--text-secondary)] transition-all duration-600',
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           )}
           style={{ transitionDelay: '100ms' }}

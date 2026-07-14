@@ -28,7 +28,7 @@ export function Contact() {
 
         <h2
           className={cn(
-            'font-oswald text-3xl md:text-[40px] font-normal uppercase tracking-[-0.02em] text-[#E6F1FF] leading-tight transition-all duration-600',
+            'font-oswald text-3xl md:text-[40px] font-normal uppercase tracking-[-0.02em] text-foreground leading-tight transition-all duration-600',
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           )}
           style={{ transitionDelay: '100ms' }}
@@ -38,7 +38,7 @@ export function Contact() {
 
         <p
           className={cn(
-            'mt-4 text-base text-[rgba(230,241,255,0.6)] transition-all duration-600',
+            'mt-4 text-base text-[var(--text-secondary)] transition-all duration-600',
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           )}
           style={{ transitionDelay: '200ms' }}
@@ -57,7 +57,7 @@ export function Contact() {
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="font-mono text-3xl md:text-5xl text-[#00E5FF]">{stat.value}</div>
-              <div className="mt-2 text-sm text-[rgba(230,241,255,0.6)]">{stat.label}</div>
+              <div className="mt-2 text-sm text-[var(--text-secondary)]">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -72,7 +72,7 @@ export function Contact() {
         >
           <button
             onClick={() => handleScrollTo('#contact')}
-            className="px-10 py-5 bg-[#00E5FF] text-[#040A14] text-base font-medium uppercase tracking-[0.08em] rounded-md hover:shadow-glow-button hover:bg-[#33EBFF] transition-all duration-300"
+            className="px-10 py-5 bg-[#00E5FF] text-[var(--text-on-dark)] text-base font-medium uppercase tracking-[0.08em] rounded-md hover:shadow-glow-button hover:bg-[#33EBFF] transition-all duration-300"
           >
             Запросить демо
           </button>
@@ -85,7 +85,7 @@ export function Contact() {
                 if (videoBtn) videoBtn.click();
               }, 800);
             }}
-            className="px-10 py-5 border border-[rgba(0,229,255,0.4)] text-[#00E5FF] text-base font-medium uppercase tracking-[0.08em] rounded-md hover:bg-[rgba(0,229,255,0.1)] hover:border-[#00E5FF] transition-all duration-300"
+            className="px-10 py-5 border border-[var(--glow-strong)] text-[#00E5FF] text-base font-medium uppercase tracking-[0.08em] rounded-md hover:bg-[var(--accent-cyan-dim)] hover:border-[#00E5FF] transition-all duration-300"
           >
             Посмотреть демо
           </button>
@@ -104,7 +104,7 @@ export function Contact() {
         {/* Footer tagline */}
         <p
           className={cn(
-            'mt-20 font-mono text-xs text-[rgba(230,241,255,0.35)] uppercase tracking-wider transition-all duration-600',
+            'mt-20 font-mono text-xs text-[var(--text-muted)] uppercase tracking-wider transition-all duration-600',
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           )}
           style={{ transitionDelay: '600ms' }}

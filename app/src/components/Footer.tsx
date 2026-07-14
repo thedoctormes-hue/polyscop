@@ -1,20 +1,20 @@
 export function Footer() {
   return (
-    <footer className="bg-[#040A14] border-t border-[rgba(0,229,255,0.1)] py-12 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-background border-t border-[var(--accent-cyan-dim)] py-12 px-4 sm:px-6 lg:px-8">
       <div className="content-container flex flex-col md:flex-row items-center justify-between gap-4">
         <div>
-          <span className="font-oswald text-base font-medium tracking-[0.1em] text-[#E6F1FF]">
+          <span className="font-oswald text-base font-medium tracking-[0.1em] text-foreground">
             ПОЛИСКОП
           </span>
-          <p className="text-xs text-[rgba(230,241,255,0.35)] mt-1">&copy; 2026</p>
+          <p className="text-xs text-[var(--text-muted)] mt-1">&copy; 2026</p>
         </div>
 
 
         <div className="text-right">
-          <p className="text-xs text-[rgba(230,241,255,0.35)]">
+          <p className="text-xs text-[var(--text-muted)]">
             Импортозамещающее решение
           </p>
-          <p className="text-xs text-[rgba(230,241,255,0.35)]">
+          <p className="text-xs text-[var(--text-muted)]">
             AI-ассистент детекции полипов
           </p>
         </div>

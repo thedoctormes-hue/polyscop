@@ -34,7 +34,7 @@ export function Hero() {
           alt=""
           className="w-full h-full object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#040A14]/60 via-transparent to-[#040A14]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background" />
       </div>
 
       {/* Glow effect */}
@@ -59,13 +59,13 @@ export function Hero() {
         {/* Heading */}
         <h1
           className={cn(
-            'font-oswald text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium leading-[0.95] tracking-[-0.04em] uppercase text-[#E6F1FF] max-w-[800px] transition-all duration-800',
+            'font-oswald text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-medium leading-[0.95] tracking-[-0.04em] uppercase text-foreground max-w-[800px] transition-all duration-800',
             loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           )}
           style={{
             transitionTimingFunction: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
             transitionDelay: '150ms',
-            textShadow: '0 0 60px rgba(0, 229, 255, 0.15)',
+            textShadow: '0 0 60px var(--glow-strong)',
           }}
         >
           AI-ассистент детекции полипов
@@ -74,7 +74,7 @@ export function Hero() {
         {/* Subtitle */}
         <p
           className={cn(
-            'mt-6 text-lg md:text-xl font-inter text-[rgba(230,241,255,0.6)] max-w-[600px] leading-relaxed transition-all duration-800',
+            'mt-6 text-lg md:text-xl font-inter text-[var(--text-secondary)] max-w-[600px] leading-relaxed transition-all duration-800',
             loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           )}
           style={{
@@ -99,9 +99,9 @@ export function Hero() {
           {specBadges.map((badge) => (
             <div
               key={badge.label}
-              className="border border-[rgba(0,229,255,0.1)] rounded-md px-5 py-3 text-center"
+              className="border border-[var(--accent-cyan-dim)] rounded-md px-5 py-3 text-center"
             >
-              <div className="text-[11px] text-[rgba(230,241,255,0.35)] uppercase tracking-[0.1em]">
+              <div className="text-[11px] text-[var(--text-muted)] uppercase tracking-[0.1em]">
                 {badge.label}
               </div>
               <div className="text-base font-mono text-[#00E5FF] mt-1">{badge.value}</div>
@@ -122,14 +122,14 @@ export function Hero() {
         >
           <button
             onClick={() => handleScrollTo('#contact')}
-            className="px-8 py-4 bg-[#00E5FF] text-[#040A14] text-sm font-medium uppercase tracking-[0.08em] rounded-md hover:shadow-glow-button hover:bg-[#33EBFF] transition-all duration-300"
+            className="px-8 py-4 bg-[#00E5FF] text-[var(--text-on-dark)] text-sm font-medium uppercase tracking-[0.08em] rounded-md hover:shadow-glow-button hover:bg-[#33EBFF] transition-all duration-300"
           >
             Запросить демо
           </button>
           <button
             data-video-trigger
             onClick={() => setShowVideo(true)}
-            className="px-8 py-4 border border-[rgba(0,229,255,0.4)] text-[#00E5FF] text-sm font-medium uppercase tracking-[0.08em] rounded-md hover:bg-[rgba(0,229,255,0.1)] hover:border-[#00E5FF] transition-all duration-300 flex items-center gap-2"
+            className="px-8 py-4 border border-[var(--glow-strong)] text-[#00E5FF] text-sm font-medium uppercase tracking-[0.08em] rounded-md hover:bg-[var(--accent-cyan-dim)] hover:border-[#00E5FF] transition-all duration-300 flex items-center gap-2"
           >
             <Play className="w-4 h-4" />
             Смотреть демо

@@ -19,13 +19,13 @@ export function Market() {
   const { ref, isVisible } = useScrollReveal(0.15);
 
   return (
-    <section id="market" className="bg-[#040A14] section-padding">
+    <section id="market" className="bg-background section-padding">
       <div ref={ref} className="content-container">
         <SectionLabel text="Рынок РФ" />
 
         <h2
           className={cn(
-            'font-oswald text-3xl md:text-[40px] font-normal uppercase tracking-[-0.02em] text-[#E6F1FF] leading-tight transition-all duration-600',
+            'font-oswald text-3xl md:text-[40px] font-normal uppercase tracking-[-0.02em] text-foreground leading-tight transition-all duration-600',
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           )}
           style={{ transitionDelay: '100ms' }}
@@ -39,7 +39,7 @@ export function Market() {
             <div
               key={card.number || card.title}
               className={cn(
-                'bg-[#08101F] border border-[rgba(0,229,255,0.1)] p-6 rounded-lg text-center card-glow transition-all duration-500',
+                'bg-card border border-[var(--accent-cyan-dim)] p-6 rounded-lg text-center card-glow transition-all duration-500',
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
               )}
               style={{ transitionDelay: `${200 + i * 100}ms` }}
@@ -48,9 +48,9 @@ export function Market() {
                 <div className="font-mono text-2xl text-[#00E5FF]">{card.number}</div>
               )}
               {card.title && (
-                <div className="text-base font-medium text-[#E6F1FF]">{card.title}</div>
+                <div className="text-base font-medium text-foreground">{card.title}</div>
               )}
-              <div className="mt-2 text-sm text-[rgba(230,241,255,0.6)]">{card.desc}</div>
+              <div className="mt-2 text-sm text-[var(--text-secondary)]">{card.desc}</div>
             </div>
           ))}
         </div>
@@ -65,7 +65,7 @@ export function Market() {
         >
           <table className="w-full min-w-[600px]">
             <thead>
-              <tr className="bg-[#0D1829]">
+              <tr className="bg-[var(--bg-elevated)]">
                 <th className="text-left px-4 md:px-6 py-4 text-sm font-medium text-[#00E5FF] uppercase tracking-wider border-b-2 border-[#00E5FF]">
                   Покрытие
                 </th>
@@ -88,14 +88,14 @@ export function Market() {
                 <tr
                   key={row.coverage}
                   className={cn(
-                    'border-b border-[rgba(0,229,255,0.1)] transition-colors',
-                    row.highlight && 'bg-[rgba(0,229,255,0.05)]'
+                    'border-b border-[var(--accent-cyan-dim)] transition-colors',
+                    row.highlight && 'bg-[var(--glow-color)]'
                   )}
                 >
-                  <td className="px-4 md:px-6 py-4 text-base font-medium text-[#E6F1FF]">{row.coverage}</td>
-                  <td className="px-4 md:px-6 py-4 text-base text-[rgba(230,241,255,0.6)]">{row.cabinets}</td>
-                  <td className="px-4 md:px-6 py-4 text-base text-[rgba(230,241,255,0.6)]">{row.revenue}</td>
-                  <td className="px-4 md:px-6 py-4 text-base text-[rgba(230,241,255,0.6)]">{row.subscription}</td>
+                  <td className="px-4 md:px-6 py-4 text-base font-medium text-foreground">{row.coverage}</td>
+                  <td className="px-4 md:px-6 py-4 text-base text-[var(--text-secondary)]">{row.cabinets}</td>
+                  <td className="px-4 md:px-6 py-4 text-base text-[var(--text-secondary)]">{row.revenue}</td>
+                  <td className="px-4 md:px-6 py-4 text-base text-[var(--text-secondary)]">{row.subscription}</td>
                   <td className={cn(
                     'px-4 md:px-6 py-4 text-base font-medium',
                     row.highlight ? 'text-[#00E5FF]' : 'text-[#00E5FF]/80'

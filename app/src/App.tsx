@@ -12,10 +12,11 @@ import { Roadmap } from '@/sections/Roadmap';
 import { Strategy } from '@/sections/Strategy';
 import { Team } from '@/sections/Team';
 import { Contact } from '@/sections/Contact';
+import { Toaster } from '@/components/ui/sonner';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#040A14] text-[#E6F1FF] font-inter overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground font-inter overflow-x-hidden">
       <Navigation />
       <main>
         <Hero />
@@ -32,6 +33,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <Toaster />
     </div>
   );
 }

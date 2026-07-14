@@ -13,13 +13,13 @@ export function Benefits() {
   const { ref, isVisible } = useScrollReveal(0.15);
 
   return (
-    <section id="benefits" className="bg-[#060E1A] section-padding">
+    <section id="benefits" className="bg-[var(--bg-secondary)] section-padding">
       <div ref={ref} className="content-container">
         <SectionLabel text="Что получает клиника" />
 
         <h2
           className={cn(
-            'font-oswald text-3xl md:text-[40px] font-normal uppercase tracking-[-0.02em] text-[#E6F1FF] leading-tight transition-all duration-600',
+            'font-oswald text-3xl md:text-[40px] font-normal uppercase tracking-[-0.02em] text-foreground leading-tight transition-all duration-600',
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           )}
           style={{ transitionDelay: '100ms' }}
@@ -32,7 +32,7 @@ export function Benefits() {
             <div
               key={benefit.title}
               className={cn(
-                'bg-[#08101F] border border-[rgba(0,229,255,0.1)] p-8 rounded-lg card-glow transition-all duration-500',
+                'bg-card border border-[var(--accent-cyan-dim)] p-8 rounded-lg card-glow transition-all duration-500',
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               )}
               style={{
@@ -42,8 +42,8 @@ export function Benefits() {
               }}
             >
               <div className="font-mono text-4xl md:text-5xl text-[#00E5FF]">{benefit.number}</div>
-              <h3 className="mt-4 text-xl font-medium text-[#E6F1FF]">{benefit.title}</h3>
-              <p className="mt-3 text-base text-[rgba(230,241,255,0.6)] leading-relaxed">{benefit.desc}</p>
+              <h3 className="mt-4 text-xl font-medium text-foreground">{benefit.title}</h3>
+              <p className="mt-3 text-base text-[var(--text-secondary)] leading-relaxed">{benefit.desc}</p>
             </div>
           ))}
         </div>

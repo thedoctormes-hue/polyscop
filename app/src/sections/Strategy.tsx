@@ -37,13 +37,13 @@ export function Strategy() {
   const { ref, isVisible } = useScrollReveal(0.15);
 
   return (
-    <section id="strategy" className="bg-[#040A14] section-padding">
+    <section id="strategy" className="bg-background section-padding">
       <div ref={ref} className="content-container">
         <SectionLabel text="Соответствие стратегии" />
 
         <h2
           className={cn(
-            'font-oswald text-3xl md:text-[40px] font-normal uppercase tracking-[-0.02em] text-[#E6F1FF] leading-tight transition-all duration-600',
+            'font-oswald text-3xl md:text-[40px] font-normal uppercase tracking-[-0.02em] text-foreground leading-tight transition-all duration-600',
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           )}
           style={{ transitionDelay: '100ms' }}
@@ -59,7 +59,7 @@ export function Strategy() {
               <div
                 key={strat.title}
                 className={cn(
-                  'bg-[#08101F] border border-[rgba(0,229,255,0.1)] p-8 rounded-lg card-glow transition-all duration-500',
+                  'bg-card border border-[var(--accent-cyan-dim)] p-8 rounded-lg card-glow transition-all duration-500',
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 )}
                 style={{ transitionDelay: `${200 + i * 100}ms` }}
@@ -67,8 +67,8 @@ export function Strategy() {
                 <div className="text-[#00E5FF]">
                   <Icon size={32} />
                 </div>
-                <h3 className="mt-4 text-lg font-medium text-[#E6F1FF]">{strat.title}</h3>
-                <p className="mt-2 text-sm text-[rgba(230,241,255,0.6)] leading-relaxed">{strat.desc}</p>
+                <h3 className="mt-4 text-lg font-medium text-foreground">{strat.title}</h3>
+                <p className="mt-2 text-sm text-[var(--text-secondary)] leading-relaxed">{strat.desc}</p>
               </div>
             );
           })}
@@ -82,7 +82,7 @@ export function Strategy() {
           )}
           style={{ transitionDelay: '600ms' }}
         >
-          <h3 className="font-oswald text-xl uppercase tracking-[-0.02em] text-[#E6F1FF] text-center">
+          <h3 className="font-oswald text-xl uppercase tracking-[-0.02em] text-foreground text-center">
             Эффекты внедрения
           </h3>
 
@@ -99,7 +99,7 @@ export function Strategy() {
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="text-[#00E5FF] flex-shrink-0 mt-0.5">
                   <path d="M4 10L8 14L16 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-                <span className="text-base text-[rgba(230,241,255,0.6)] leading-relaxed">{effect}</span>
+                <span className="text-base text-[var(--text-secondary)] leading-relaxed">{effect}</span>
               </div>
             ))}
           </div>

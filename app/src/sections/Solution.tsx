@@ -23,7 +23,7 @@ export function Solution() {
   const { ref, isVisible } = useScrollReveal(0.15);
 
   return (
-    <section id="solution" className="bg-[#060E1A] section-padding">
+    <section id="solution" className="bg-[var(--bg-secondary)] section-padding">
       <div ref={ref} className="content-container">
         <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-8 lg:gap-16 items-center">
           {/* Left column - content */}
@@ -39,7 +39,7 @@ export function Solution() {
 
             <h2
               className={cn(
-                'font-oswald text-3xl md:text-[40px] font-normal uppercase tracking-[-0.02em] text-[#E6F1FF] leading-tight transition-all duration-600',
+                'font-oswald text-3xl md:text-[40px] font-normal uppercase tracking-[-0.02em] text-foreground leading-tight transition-all duration-600',
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               )}
               style={{ transitionDelay: '100ms' }}
@@ -69,12 +69,12 @@ export function Solution() {
                     )}
                     style={{ transitionDelay: `${300 + i * 100}ms` }}
                   >
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#08101F] border border-[rgba(0,229,255,0.1)] flex items-center justify-center text-[#00E5FF]">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-card border border-[var(--accent-cyan-dim)] flex items-center justify-center text-[#00E5FF]">
                       <Icon size={18} />
                     </div>
                     <div>
-                      <div className="text-lg font-medium text-[#E6F1FF]">{feature.title}</div>
-                      <div className="text-sm text-[rgba(230,241,255,0.6)] mt-0.5">{feature.desc}</div>
+                      <div className="text-lg font-medium text-foreground">{feature.title}</div>
+                      <div className="text-sm text-[var(--text-secondary)] mt-0.5">{feature.desc}</div>
                     </div>
                   </div>
                 );
@@ -90,13 +90,13 @@ export function Solution() {
             )}
             style={{ transitionDelay: '400ms' }}
           >
-            <div className="relative rounded-lg overflow-hidden border border-[rgba(0,229,255,0.1)] shadow-glow">
+            <div className="relative rounded-lg overflow-hidden border border-[var(--accent-cyan-dim)] shadow-glow">
               <img
                 src="/assets/solution-endoscopy.jpg"
                 alt="AI-детекция полипа в реальном времени"
                 className="w-full aspect-[4/3] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#040A14]/40 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent pointer-events-none" />
             </div>
           </div>
         </div>

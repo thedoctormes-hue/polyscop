@@ -21,13 +21,13 @@ export function Competitors() {
   const { ref, isVisible } = useScrollReveal(0.15);
 
   return (
-    <section id="competitors" className="bg-[#060E1A] section-padding">
+    <section id="competitors" className="bg-[var(--bg-secondary)] section-padding">
       <div ref={ref} className="content-container">
         <SectionLabel text="Конкуренты" />
 
         <h2
           className={cn(
-            'font-oswald text-3xl md:text-[40px] font-normal uppercase tracking-[-0.02em] text-[#E6F1FF] leading-tight transition-all duration-600',
+            'font-oswald text-3xl md:text-[40px] font-normal uppercase tracking-[-0.02em] text-foreground leading-tight transition-all duration-600',
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           )}
           style={{ transitionDelay: '100ms' }}
@@ -45,14 +45,14 @@ export function Competitors() {
         >
           <table className="w-full min-w-[600px]">
             <thead>
-              <tr className="bg-[#0D1829]">
+              <tr className="bg-[var(--bg-elevated)]">
                 <th className="text-left px-6 py-4 text-sm font-medium text-[#00E5FF] uppercase tracking-wider border-b-2 border-[#00E5FF]">
                   Критерий
                 </th>
-                <th className="text-left px-6 py-4 text-sm font-medium text-[rgba(230,241,255,0.6)] uppercase tracking-wider border-b-2 border-[#00E5FF]">
+                <th className="text-left px-6 py-4 text-sm font-medium text-[var(--text-secondary)] uppercase tracking-wider border-b-2 border-[#00E5FF]">
                   ArtInCol (NMITS)
                 </th>
-                <th className="text-left px-6 py-4 text-sm font-medium text-[#00E5FF] uppercase tracking-wider border-b-2 border-[#00E5FF] bg-[rgba(0,229,255,0.05)]">
+                <th className="text-left px-6 py-4 text-sm font-medium text-[#00E5FF] uppercase tracking-wider border-b-2 border-[#00E5FF] bg-[var(--glow-color)]">
                   ПОЛИСКОП
                 </th>
               </tr>
@@ -61,13 +61,13 @@ export function Competitors() {
               {tableData.map((row) => (
                 <tr
                   key={row.criterion}
-                  className="border-b border-[rgba(0,229,255,0.1)] hover:bg-[rgba(0,229,255,0.03)] transition-colors"
+                  className="border-b border-[var(--accent-cyan-dim)] hover:bg-[var(--glow-color)] transition-colors"
                 >
-                  <td className="px-6 py-5 text-base text-[#E6F1FF]">{row.criterion}</td>
-                  <td className="px-6 py-5 text-base text-[rgba(230,241,255,0.6)]">{row.artincol}</td>
+                  <td className="px-6 py-5 text-base text-foreground">{row.criterion}</td>
+                  <td className="px-6 py-5 text-base text-[var(--text-secondary)]">{row.artincol}</td>
                   <td
                     className={cn(
-                      'px-6 py-5 text-base font-medium bg-[rgba(0,229,255,0.03)]',
+                      'px-6 py-5 text-base font-medium bg-[var(--glow-color)]',
                       row.highlight ? 'text-[#00E5FF]' : 'text-[#00E5FF]/90'
                     )}
                   >
@@ -79,7 +79,7 @@ export function Competitors() {
           </table>
         </div>
 
-        <p className="mt-4 text-[13px] text-[rgba(230,241,255,0.35)]">
+        <p className="mt-4 text-[13px] text-[var(--text-muted)]">
           * Источник: КП ООО «Ventum Med» от 23.06.2026
         </p>
 
@@ -94,13 +94,13 @@ export function Competitors() {
               )}
               style={{ transitionDelay: `${400 + i * 100}ms` }}
             >
-              <div className="w-12 h-12 mx-auto rounded-full bg-[#08101F] border border-[rgba(0,229,255,0.1)] flex items-center justify-center">
+              <div className="w-12 h-12 mx-auto rounded-full bg-card border border-[var(--accent-cyan-dim)] flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#00E5FF]">
                   <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <div className="mt-3 text-base font-medium text-[#E6F1FF]">{adv.title}</div>
-              <div className="mt-1 text-[13px] text-[rgba(230,241,255,0.35)]">{adv.desc}</div>
+              <div className="mt-3 text-base font-medium text-foreground">{adv.title}</div>
+              <div className="mt-1 text-[13px] text-[var(--text-muted)]">{adv.desc}</div>
             </div>
           ))}
         </div>
